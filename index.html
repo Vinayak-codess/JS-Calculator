@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Calculator</title>
+    <style>
+        body{
+    background-color: black;
+    color: white;
+    margin:0;
+    align-items: center;
+}
+
+.heading{
+    text-align: center;
+    border-bottom: 2px solid white;
+    padding:1vw;
+    margin-bottom: 3vw;
+    margin-left: 3vw;
+    margin-right: 3vh;
+
+}
+
+.number{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:2vw;
+
+}
+
+#firstNo{
+    width: 40%;
+    border-radius: 10px;
+}
+
+#secondNo{
+    width: 40%;
+    border-radius: 10px;
+}
+
+.operation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+    </style>
+</head>
+<body>
+    <h1 class="heading">Calculator</h1>
+    <div class="number">
+
+    <input type="number" name="First-no" id="firstNo" placeholder="Enter First No.">
+    <input type="number" name="Second-no" id="secondNo" placeholder="Enter Second No.">
+    </div>
+    <br>
+    <div id="output">
+    </div>
+
+    <div class="operation">
+    <h2>Select Operation</h2>
+    <label for="Addition">Addition</label>
+    <input type="radio" name="operation" id="Addition" value="Addition"> <br>
+    <label for="Subtraction">Subtraction</label>
+    <input type="radio" name="operation" id="Subtraction" value="Subtraction"><br>
+    <label for="Multiplication">Multiplication</label>
+    <input type="radio" name="operation" id="Multiplication" value="Multiplication"><br>
+    <label for="Division">Division</label>
+    <input type="radio" name="operation" id="Division" value="Division"><br>
+    </div>
+
+    <div class="btn">
+    <button id="btn">Answer</button>
+    </div>
+
+</body>
+<script>
+
+document.getElementById("btn").onclick = function calc() {
+    let operation = document.querySelector('input[name="operation"]:checked');
+    console.log(operation.value)
+
+    var firstNo = Number(document.getElementById("firstNo").value);
+    var secondNo = Number(document.getElementById("secondNo").value);
+
+    if (operation.value === "Addition") {
+    var added = (firstNo + secondNo);
+    document.getElementById("output").innerHTML = added;
+    }
+    else if (operation.value === "Subtraction") {
+    var added = (firstNo - secondNo);
+    document.getElementById("output").innerHTML = added;
+    }
+    else if (operation.value === "Multiplication") {
+    var added = (firstNo * secondNo);
+    document.getElementById("output").innerHTML = added;
+    }
+    else if (operation.value === "Division") {
+    var added = (firstNo / secondNo);
+    document.getElementById("output").innerHTML = added;
+    }
+}
+
+
+</script>
+</html>
