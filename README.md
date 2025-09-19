@@ -1,5 +1,7 @@
 # JS-Calculator
 
+https://vinayak-codess.github.io/JS-Calculator/
+
 # 🧮 Simple Calculator (HTML, CSS, JavaScript)
 
 A basic calculator web app built using HTML, CSS, and vanilla JavaScript.
